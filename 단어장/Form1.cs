@@ -31,6 +31,9 @@ namespace 단어장
                 string[] str1 = str.Split(' ');
                 ListViewItem listViewItem = new ListViewItem(str1);
                 list_words.Items.Add(listViewItem);
+                this.Width = 650;
+                btn_redution.Visible = true;
+                btn_extention.Visible = false;
             }
             streamReader.Close();
 
@@ -98,6 +101,28 @@ namespace 단어장
         private void btn_listdel_Click(object sender, EventArgs e)
         {
             list_words.SelectedItems[0].Remove();
+        }
+
+        private void btn_extention_Click(object sender, EventArgs e)
+        {
+            for(int i =400;i<=650;i+=8)
+            {
+                this.Width = i;
+            }
+            this.Width = 650;
+            btn_extention.Visible = false;
+            btn_redution.Visible = true;
+        }
+
+        private void btn_redution_Click(object sender, EventArgs e)
+        {
+            for(int i =650;i>=400;i-=8)
+            {
+                this.Width = i;
+            }
+            this.Width = 400;
+            btn_extention.Visible = true;
+            btn_redution.Visible = false;
         }
     }
 }

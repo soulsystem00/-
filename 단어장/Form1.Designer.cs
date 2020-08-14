@@ -42,13 +42,15 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btn_save = new System.Windows.Forms.Button();
             this.btn_listdel = new System.Windows.Forms.Button();
+            this.btn_extention = new System.Windows.Forms.Button();
+            this.btn_redution = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txt_word
             // 
             this.txt_word.AutoSize = true;
             this.txt_word.Font = new System.Drawing.Font("굴림", 15F);
-            this.txt_word.Location = new System.Drawing.Point(169, 47);
+            this.txt_word.Location = new System.Drawing.Point(113, 48);
             this.txt_word.Name = "txt_word";
             this.txt_word.Size = new System.Drawing.Size(87, 25);
             this.txt_word.TabIndex = 0;
@@ -56,7 +58,7 @@
             // 
             // txt_mean
             // 
-            this.txt_mean.Location = new System.Drawing.Point(174, 98);
+            this.txt_mean.Location = new System.Drawing.Point(118, 99);
             this.txt_mean.Name = "txt_mean";
             this.txt_mean.Size = new System.Drawing.Size(100, 25);
             this.txt_mean.TabIndex = 1;
@@ -65,7 +67,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(136, 101);
+            this.label2.Location = new System.Drawing.Point(80, 102);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(22, 15);
             this.label2.TabIndex = 2;
@@ -73,7 +75,7 @@
             // 
             // btn_submit
             // 
-            this.btn_submit.Location = new System.Drawing.Point(289, 98);
+            this.btn_submit.Location = new System.Drawing.Point(233, 99);
             this.btn_submit.Name = "btn_submit";
             this.btn_submit.Size = new System.Drawing.Size(75, 23);
             this.btn_submit.TabIndex = 3;
@@ -87,7 +89,7 @@
             this.단어,
             this.뜻});
             this.list_words.HideSelection = false;
-            this.list_words.Location = new System.Drawing.Point(523, 65);
+            this.list_words.Location = new System.Drawing.Point(467, 66);
             this.list_words.Name = "list_words";
             this.list_words.Size = new System.Drawing.Size(205, 271);
             this.list_words.TabIndex = 4;
@@ -106,7 +108,7 @@
             // txt_result
             // 
             this.txt_result.AutoSize = true;
-            this.txt_result.Location = new System.Drawing.Point(171, 160);
+            this.txt_result.Location = new System.Drawing.Point(115, 143);
             this.txt_result.Name = "txt_result";
             this.txt_result.Size = new System.Drawing.Size(38, 15);
             this.txt_result.TabIndex = 5;
@@ -114,14 +116,14 @@
             // 
             // txt_Sword
             // 
-            this.txt_Sword.Location = new System.Drawing.Point(174, 263);
+            this.txt_Sword.Location = new System.Drawing.Point(118, 264);
             this.txt_Sword.Name = "txt_Sword";
             this.txt_Sword.Size = new System.Drawing.Size(100, 25);
             this.txt_Sword.TabIndex = 6;
             // 
             // txt_Smean
             // 
-            this.txt_Smean.Location = new System.Drawing.Point(174, 294);
+            this.txt_Smean.Location = new System.Drawing.Point(118, 295);
             this.txt_Smean.Name = "txt_Smean";
             this.txt_Smean.Size = new System.Drawing.Size(100, 25);
             this.txt_Smean.TabIndex = 7;
@@ -129,7 +131,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(107, 266);
+            this.label1.Location = new System.Drawing.Point(51, 267);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(37, 15);
             this.label1.TabIndex = 8;
@@ -138,7 +140,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(107, 297);
+            this.label3.Location = new System.Drawing.Point(51, 298);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(22, 15);
             this.label3.TabIndex = 9;
@@ -146,7 +148,7 @@
             // 
             // btn_save
             // 
-            this.btn_save.Location = new System.Drawing.Point(289, 263);
+            this.btn_save.Location = new System.Drawing.Point(233, 264);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(75, 56);
             this.btn_save.TabIndex = 10;
@@ -156,7 +158,7 @@
             // 
             // btn_listdel
             // 
-            this.btn_listdel.Location = new System.Drawing.Point(653, 342);
+            this.btn_listdel.Location = new System.Drawing.Point(597, 343);
             this.btn_listdel.Name = "btn_listdel";
             this.btn_listdel.Size = new System.Drawing.Size(75, 23);
             this.btn_listdel.TabIndex = 11;
@@ -164,11 +166,33 @@
             this.btn_listdel.UseVisualStyleBackColor = true;
             this.btn_listdel.Click += new System.EventHandler(this.btn_listdel_Click);
             // 
+            // btn_extention
+            // 
+            this.btn_extention.Location = new System.Drawing.Point(341, 343);
+            this.btn_extention.Name = "btn_extention";
+            this.btn_extention.Size = new System.Drawing.Size(75, 23);
+            this.btn_extention.TabIndex = 12;
+            this.btn_extention.Text = "보이기";
+            this.btn_extention.UseVisualStyleBackColor = true;
+            this.btn_extention.Click += new System.EventHandler(this.btn_extention_Click);
+            // 
+            // btn_redution
+            // 
+            this.btn_redution.Location = new System.Drawing.Point(341, 343);
+            this.btn_redution.Name = "btn_redution";
+            this.btn_redution.Size = new System.Drawing.Size(75, 23);
+            this.btn_redution.TabIndex = 13;
+            this.btn_redution.Text = "숨기기";
+            this.btn_redution.UseVisualStyleBackColor = true;
+            this.btn_redution.Click += new System.EventHandler(this.btn_redution_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(426, 450);
+            this.Controls.Add(this.btn_redution);
+            this.Controls.Add(this.btn_extention);
             this.Controls.Add(this.btn_listdel);
             this.Controls.Add(this.btn_save);
             this.Controls.Add(this.label3);
@@ -206,6 +230,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btn_save;
         private System.Windows.Forms.Button btn_listdel;
+        private System.Windows.Forms.Button btn_extention;
+        private System.Windows.Forms.Button btn_redution;
     }
 }
 
