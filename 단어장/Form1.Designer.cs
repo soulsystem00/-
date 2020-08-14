@@ -28,12 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
-            "hello",
-            "안녕"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
-            "asist",
-            "도움"}, -1);
             this.txt_word = new System.Windows.Forms.Label();
             this.txt_mean = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -42,6 +36,12 @@
             this.단어 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.뜻 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.txt_result = new System.Windows.Forms.Label();
+            this.txt_Sword = new System.Windows.Forms.TextBox();
+            this.txt_Smean = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btn_save = new System.Windows.Forms.Button();
+            this.btn_listdel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txt_word
@@ -87,9 +87,6 @@
             this.단어,
             this.뜻});
             this.list_words.HideSelection = false;
-            this.list_words.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1,
-            listViewItem2});
             this.list_words.Location = new System.Drawing.Point(523, 65);
             this.list_words.Name = "list_words";
             this.list_words.Size = new System.Drawing.Size(205, 271);
@@ -115,11 +112,69 @@
             this.txt_result.TabIndex = 5;
             this.txt_result.Text = "hello";
             // 
+            // txt_Sword
+            // 
+            this.txt_Sword.Location = new System.Drawing.Point(174, 263);
+            this.txt_Sword.Name = "txt_Sword";
+            this.txt_Sword.Size = new System.Drawing.Size(100, 25);
+            this.txt_Sword.TabIndex = 6;
+            // 
+            // txt_Smean
+            // 
+            this.txt_Smean.Location = new System.Drawing.Point(174, 294);
+            this.txt_Smean.Name = "txt_Smean";
+            this.txt_Smean.Size = new System.Drawing.Size(100, 25);
+            this.txt_Smean.TabIndex = 7;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(107, 266);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(37, 15);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "단어";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(107, 297);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(22, 15);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "뜻";
+            // 
+            // btn_save
+            // 
+            this.btn_save.Location = new System.Drawing.Point(289, 263);
+            this.btn_save.Name = "btn_save";
+            this.btn_save.Size = new System.Drawing.Size(75, 56);
+            this.btn_save.TabIndex = 10;
+            this.btn_save.Text = "저장";
+            this.btn_save.UseVisualStyleBackColor = true;
+            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
+            // 
+            // btn_listdel
+            // 
+            this.btn_listdel.Location = new System.Drawing.Point(653, 342);
+            this.btn_listdel.Name = "btn_listdel";
+            this.btn_listdel.Size = new System.Drawing.Size(75, 23);
+            this.btn_listdel.TabIndex = 11;
+            this.btn_listdel.Text = "삭제";
+            this.btn_listdel.UseVisualStyleBackColor = true;
+            this.btn_listdel.Click += new System.EventHandler(this.btn_listdel_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btn_listdel);
+            this.Controls.Add(this.btn_save);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txt_Smean);
+            this.Controls.Add(this.txt_Sword);
             this.Controls.Add(this.txt_result);
             this.Controls.Add(this.list_words);
             this.Controls.Add(this.btn_submit);
@@ -128,6 +183,7 @@
             this.Controls.Add(this.txt_word);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -144,6 +200,12 @@
         private System.Windows.Forms.ColumnHeader 단어;
         private System.Windows.Forms.ColumnHeader 뜻;
         private System.Windows.Forms.Label txt_result;
+        private System.Windows.Forms.TextBox txt_Sword;
+        private System.Windows.Forms.TextBox txt_Smean;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btn_save;
+        private System.Windows.Forms.Button btn_listdel;
     }
 }
 
