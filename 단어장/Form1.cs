@@ -8,18 +8,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Numerics;
 namespace 단어장
 {
     public partial class Form1 : Form
     {
         string answer;
+
+        List<int> list;
         public Form1()
         {
             InitializeComponent();
             txt_result.Text = "input answer";
+            list = new List<int> { 0 };
             setlistview();
             randomtxt();
+            txt_wordcnt.Text = list_words.Items.Count.ToString();
+            txt_word.Text = list_words.Items[list[0]].Text;
+            answer = list_words.Items[list[0]].SubItems[1].Text;
+            list.RemoveAt(0);
         }
 
         public void setlistview()
@@ -31,7 +38,7 @@ namespace 단어장
                 string[] str1 = str.Split(' ');
                 ListViewItem listViewItem = new ListViewItem(str1);
                 list_words.Items.Add(listViewItem);
-                this.Width = 650;
+                this.Width = 850;
                 btn_redution.Visible = true;
                 btn_extention.Visible = false;
             }
@@ -43,12 +50,31 @@ namespace 단어장
             Random random = new Random();
 
             int num2 = list_words.Items.Count;
-            int num = random.Next(0,num2);
-            string str = list_words.Items[num].Text;
+            bool check = true;
+            
+            while(list.Count != num2)
+            {
+                int num = random.Next(0, num2);
+                for(int i =0;i<list.Count;i++)
+                {
+                    if (list[i] == num)
+                    {
+                        check = false;
+                        break;
+                    }
+                    else
+                        check = true;
+                }
+                if(check)
+                {
+                    list.Add(num);
+                }
+            }
+            /*string str = list_words.Items[num].Text;
 
             txt_word.Text = str;
 
-            answer = list_words.Items[num].SubItems[1].Text;
+            answer = list_words.Items[num].SubItems[1].Text;*/
         }
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -60,14 +86,30 @@ namespace 단어장
         {
             if(answer == txt_mean.Text)
             {
-                randomtxt();
                 txt_result.Text = "correct";
+                
+                txt_cornum.Text = (Convert.ToInt32(txt_cornum.Text) + 1).ToString();
             }
             else
             {
                 txt_result.Text = "wrong";
+                txt_incornum.Text = (Convert.ToInt32(txt_incornum.Text) + 1).ToString();
+                string[] str = new string[] { txt_word.Text, answer };
+                ListViewItem listViewItem = new ListViewItem(str);
+                list_Wword.Items.Add(listViewItem);
             }
-                
+            txt_mean.Text = "";
+            if (list.Count > 0)
+            {
+                txt_word.Text = list_words.Items[list[0]].Text;
+                answer = list_words.Items[list[0]].SubItems[1].Text;
+                list.RemoveAt(0);
+            }
+            else
+            {
+                txt_word.Text = "Clear";
+                answer = "Clear";
+            }
         }
 
         private void txt_mean_KeyPress(object sender, KeyPressEventArgs e)
@@ -82,6 +124,10 @@ namespace 단어장
         {
             ListViewItem listViewItem = new ListViewItem(new string[] { txt_Sword.Text, txt_Smean.Text },-1);
             list_words.Items.Add(listViewItem);
+            txt_Smean.Text = "";
+            txt_Sword.Text = "";
+            txt_Sword.Focus();
+            txt_wordcnt.Text = list_words.Items.Count.ToString();
         }
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
@@ -101,28 +147,37 @@ namespace 단어장
         private void btn_listdel_Click(object sender, EventArgs e)
         {
             list_words.SelectedItems[0].Remove();
+            txt_wordcnt.Text = list_words.Items.Count.ToString();
         }
 
         private void btn_extention_Click(object sender, EventArgs e)
         {
-            for(int i =400;i<=650;i+=8)
+            for(int i =400;i<=850;i+=5)
             {
                 this.Width = i;
             }
-            this.Width = 650;
+            this.Width = 850;
             btn_extention.Visible = false;
             btn_redution.Visible = true;
         }
 
         private void btn_redution_Click(object sender, EventArgs e)
         {
-            for(int i =650;i>=400;i-=8)
+            for(int i =650;i>=400;i-=5)
             {
                 this.Width = i;
             }
             this.Width = 400;
             btn_extention.Visible = true;
             btn_redution.Visible = false;
+        }
+
+        private void txt_Smean_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                btn_save_Click(sender, e);
+            }
         }
     }
 }
