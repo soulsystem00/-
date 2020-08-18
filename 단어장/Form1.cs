@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Numerics;
+using System.Collections.Specialized;
+
 namespace 단어장
 {
     public partial class Form1 : Form
@@ -16,6 +18,9 @@ namespace 단어장
         string answer;
 
         List<int> list;
+        bool testcheck;
+
+        bool wrong_word_mean_visible = false;
         public Form1()
         {
             InitializeComponent();
@@ -27,6 +32,8 @@ namespace 단어장
             txt_word.Text = list_words.Items[list[0]].Text;
             answer = list_words.Items[list[0]].SubItems[1].Text;
             list.RemoveAt(0);
+
+            testcheck = true;
         }
 
         public void setlistview()
@@ -99,16 +106,33 @@ namespace 단어장
                 list_Wword.Items.Add(listViewItem);
             }
             txt_mean.Text = "";
-            if (list.Count > 0)
+            if(testcheck)
             {
-                txt_word.Text = list_words.Items[list[0]].Text;
-                answer = list_words.Items[list[0]].SubItems[1].Text;
-                list.RemoveAt(0);
+                if (list.Count > 0)
+                {
+                    txt_word.Text = list_words.Items[list[0]].Text;
+                    answer = list_words.Items[list[0]].SubItems[1].Text;
+                    list.RemoveAt(0);
+                }
+                else
+                {
+                    txt_word.Text = "Clear";
+                    answer = "Clear";
+                }
             }
             else
             {
-                txt_word.Text = "Clear";
-                answer = "Clear";
+                if (list.Count > 0)
+                {
+                    txt_word.Text = list_Wword.Items[list[0]].Text;
+                    answer = list_Wword.Items[list[0]].SubItems[1].Text;
+                    list.RemoveAt(0);
+                }
+                else
+                {
+                    txt_word.Text = "Clear";
+                    answer = "Clear";
+                }
             }
         }
 
@@ -179,5 +203,54 @@ namespace 단어장
                 btn_save_Click(sender, e);
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+            if (list.Count == 0)
+            {
+                testcheck = false;
+                for (int i = 0; i < list_Wword.Items.Count; i++)
+                {
+                    list.Add(i);
+                }
+                list_Wword.Clear();
+                txt_word.Text = list_Wword.Items[list[0]].Text;
+                answer = list_Wword.Items[list[0]].SubItems[1].Text;
+                list.RemoveAt(0);
+            }
+            else if(MessageBox.Show("테스트가 완료되지 않았습니다.\n틀린 단어 테스트를 시작하시겠습니까?", "틀린단어 테스트", MessageBoxButtons.YesNo).ToString() == "Yes")
+            {
+                testcheck = false;
+                list.Clear();
+                for (int i = 0; i < list_Wword.Items.Count; i++)
+                {
+                    list.Add(i);
+                }
+                list_Wword.Clear();
+                txt_word.Text = list_Wword.Items[list[0]].Text;
+                answer = list_Wword.Items[list[0]].SubItems[1].Text;
+                list.RemoveAt(0);
+            }
+            
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            wrong_word_mean_visible = !wrong_word_mean_visible;
+            if (wrong_word_mean_visible)
+            {
+                list_Wword.Columns[1].Width = 0;
+                btn_mean_visible.Text = "단어 뜻 보이기";
+                
+            }   
+            else
+            {
+                list_Wword.Columns[1].Width = 100;
+                btn_mean_visible.Text = "단어 뜻 숨기기";
+            }
+                
+        }
+       
     }
 }

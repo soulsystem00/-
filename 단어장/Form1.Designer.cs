@@ -53,20 +53,25 @@
             this.list_Wword = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btn_WwT = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.btn_mean_visible = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txt_word
             // 
             this.txt_word.AutoSize = true;
-            this.txt_word.Font = new System.Drawing.Font("굴림", 15F);
+            this.txt_word.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold);
             this.txt_word.Location = new System.Drawing.Point(113, 48);
             this.txt_word.Name = "txt_word";
-            this.txt_word.Size = new System.Drawing.Size(87, 25);
+            this.txt_word.Size = new System.Drawing.Size(90, 25);
             this.txt_word.TabIndex = 0;
             this.txt_word.Text = "단어장";
             // 
             // txt_mean
             // 
+            this.txt_mean.ImeMode = System.Windows.Forms.ImeMode.Hangul;
             this.txt_mean.Location = new System.Drawing.Point(118, 99);
             this.txt_mean.Name = "txt_mean";
             this.txt_mean.Size = new System.Drawing.Size(100, 25);
@@ -100,7 +105,7 @@
             this.list_words.HideSelection = false;
             this.list_words.Location = new System.Drawing.Point(467, 66);
             this.list_words.Name = "list_words";
-            this.list_words.Size = new System.Drawing.Size(205, 271);
+            this.list_words.Size = new System.Drawing.Size(232, 271);
             this.list_words.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.list_words.TabIndex = 4;
             this.list_words.UseCompatibleStateImageBehavior = false;
@@ -127,6 +132,7 @@
             // 
             // txt_Sword
             // 
+            this.txt_Sword.ImeMode = System.Windows.Forms.ImeMode.Alpha;
             this.txt_Sword.Location = new System.Drawing.Point(118, 264);
             this.txt_Sword.Name = "txt_Sword";
             this.txt_Sword.Size = new System.Drawing.Size(100, 25);
@@ -134,6 +140,7 @@
             // 
             // txt_Smean
             // 
+            this.txt_Smean.ImeMode = System.Windows.Forms.ImeMode.Hangul;
             this.txt_Smean.Location = new System.Drawing.Point(118, 295);
             this.txt_Smean.Name = "txt_Smean";
             this.txt_Smean.Size = new System.Drawing.Size(100, 25);
@@ -170,9 +177,9 @@
             // 
             // btn_listdel
             // 
-            this.btn_listdel.Location = new System.Drawing.Point(597, 343);
+            this.btn_listdel.Location = new System.Drawing.Point(624, 343);
             this.btn_listdel.Name = "btn_listdel";
-            this.btn_listdel.Size = new System.Drawing.Size(75, 23);
+            this.btn_listdel.Size = new System.Drawing.Size(75, 30);
             this.btn_listdel.TabIndex = 11;
             this.btn_listdel.Text = "삭제";
             this.btn_listdel.UseVisualStyleBackColor = true;
@@ -261,7 +268,6 @@
             this.list_Wword.Location = new System.Drawing.Point(725, 66);
             this.list_Wword.Name = "list_Wword";
             this.list_Wword.Size = new System.Drawing.Size(205, 271);
-            this.list_Wword.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.list_Wword.TabIndex = 20;
             this.list_Wword.UseCompatibleStateImageBehavior = false;
             this.list_Wword.View = System.Windows.Forms.View.Details;
@@ -276,11 +282,53 @@
             this.columnHeader2.Text = "뜻";
             this.columnHeader2.Width = 100;
             // 
+            // btn_WwT
+            // 
+            this.btn_WwT.Location = new System.Drawing.Point(725, 372);
+            this.btn_WwT.Name = "btn_WwT";
+            this.btn_WwT.Size = new System.Drawing.Size(205, 30);
+            this.btn_WwT.TabIndex = 21;
+            this.btn_WwT.Text = "틀린단어 테스트 시작";
+            this.btn_WwT.UseVisualStyleBackColor = true;
+            this.btn_WwT.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(464, 48);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(87, 15);
+            this.label7.TabIndex = 22;
+            this.label7.Text = "저장된 단어";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(722, 48);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(67, 15);
+            this.label8.TabIndex = 23;
+            this.label8.Text = "틀린단어";
+            // 
+            // btn_mean_visible
+            // 
+            this.btn_mean_visible.Location = new System.Drawing.Point(725, 343);
+            this.btn_mean_visible.Name = "btn_mean_visible";
+            this.btn_mean_visible.Size = new System.Drawing.Size(205, 30);
+            this.btn_mean_visible.TabIndex = 24;
+            this.btn_mean_visible.Text = "단어 뜻 숨기기";
+            this.btn_mean_visible.UseVisualStyleBackColor = true;
+            this.btn_mean_visible.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(942, 450);
+            this.Controls.Add(this.btn_mean_visible);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.btn_WwT);
             this.Controls.Add(this.list_Wword);
             this.Controls.Add(this.txt_wordcnt);
             this.Controls.Add(this.label6);
@@ -338,6 +386,10 @@
         private System.Windows.Forms.ListView list_Wword;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.Button btn_WwT;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button btn_mean_visible;
     }
 }
 
