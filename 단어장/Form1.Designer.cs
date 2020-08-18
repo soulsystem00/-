@@ -57,6 +57,9 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.btn_mean_visible = new System.Windows.Forms.Button();
+            this.btn_start_test = new System.Windows.Forms.Button();
+            this.txt_Wword_cnt = new System.Windows.Forms.Label();
+            this.btn_Wword_del = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txt_word
@@ -284,9 +287,9 @@
             // 
             // btn_WwT
             // 
-            this.btn_WwT.Location = new System.Drawing.Point(725, 372);
+            this.btn_WwT.Location = new System.Drawing.Point(724, 372);
             this.btn_WwT.Name = "btn_WwT";
-            this.btn_WwT.Size = new System.Drawing.Size(205, 30);
+            this.btn_WwT.Size = new System.Drawing.Size(206, 30);
             this.btn_WwT.TabIndex = 21;
             this.btn_WwT.Text = "틀린단어 테스트 시작";
             this.btn_WwT.UseVisualStyleBackColor = true;
@@ -306,25 +309,57 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(722, 48);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(67, 15);
+            this.label8.Size = new System.Drawing.Size(77, 15);
             this.label8.TabIndex = 23;
-            this.label8.Text = "틀린단어";
+            this.label8.Text = "틀린단어 :";
             // 
             // btn_mean_visible
             // 
-            this.btn_mean_visible.Location = new System.Drawing.Point(725, 343);
+            this.btn_mean_visible.Location = new System.Drawing.Point(805, 343);
             this.btn_mean_visible.Name = "btn_mean_visible";
-            this.btn_mean_visible.Size = new System.Drawing.Size(205, 30);
+            this.btn_mean_visible.Size = new System.Drawing.Size(125, 30);
             this.btn_mean_visible.TabIndex = 24;
             this.btn_mean_visible.Text = "단어 뜻 숨기기";
             this.btn_mean_visible.UseVisualStyleBackColor = true;
             this.btn_mean_visible.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // btn_start_test
+            // 
+            this.btn_start_test.Location = new System.Drawing.Point(467, 372);
+            this.btn_start_test.Name = "btn_start_test";
+            this.btn_start_test.Size = new System.Drawing.Size(232, 30);
+            this.btn_start_test.TabIndex = 25;
+            this.btn_start_test.Text = "테스트 시작";
+            this.btn_start_test.UseVisualStyleBackColor = true;
+            this.btn_start_test.Click += new System.EventHandler(this.btn_start_test_Click);
+            // 
+            // txt_Wword_cnt
+            // 
+            this.txt_Wword_cnt.AutoSize = true;
+            this.txt_Wword_cnt.Location = new System.Drawing.Point(805, 48);
+            this.txt_Wword_cnt.Name = "txt_Wword_cnt";
+            this.txt_Wword_cnt.Size = new System.Drawing.Size(45, 15);
+            this.txt_Wword_cnt.TabIndex = 26;
+            this.txt_Wword_cnt.Text = "label9";
+            // 
+            // btn_Wword_del
+            // 
+            this.btn_Wword_del.Location = new System.Drawing.Point(724, 343);
+            this.btn_Wword_del.Name = "btn_Wword_del";
+            this.btn_Wword_del.Size = new System.Drawing.Size(75, 30);
+            this.btn_Wword_del.TabIndex = 27;
+            this.btn_Wword_del.Text = "삭제";
+            this.btn_Wword_del.UseVisualStyleBackColor = true;
+            this.btn_Wword_del.Click += new System.EventHandler(this.btn_Wword_del_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(942, 450);
+            this.Controls.Add(this.btn_Wword_del);
+            this.Controls.Add(this.txt_Wword_cnt);
+            this.Controls.Add(this.btn_start_test);
             this.Controls.Add(this.btn_mean_visible);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -390,6 +425,9 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btn_mean_visible;
+        private System.Windows.Forms.Button btn_start_test;
+        private System.Windows.Forms.Label txt_Wword_cnt;
+        private System.Windows.Forms.Button btn_Wword_del;
     }
 }
 

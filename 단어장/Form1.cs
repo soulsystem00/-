@@ -38,18 +38,41 @@ namespace 단어장
 
         public void setlistview()
         {
-            StreamReader streamReader = new StreamReader("word.txt");
-            while(streamReader.Peek() >=0)
+            FileInfo fileInfo = new FileInfo("word.txt");
+            if(fileInfo.Exists)
             {
-                string str = streamReader.ReadLine();
-                string[] str1 = str.Split(' ');
-                ListViewItem listViewItem = new ListViewItem(str1);
-                list_words.Items.Add(listViewItem);
-                this.Width = 850;
-                btn_redution.Visible = true;
-                btn_extention.Visible = false;
+                StreamReader streamReader = new StreamReader("word.txt");
+                while (streamReader.Peek() >= 0)
+                {
+                    string str = streamReader.ReadLine();
+                    string[] str1 = str.Split(' ');
+                    ListViewItem listViewItem = new ListViewItem(str1);
+                    list_words.Items.Add(listViewItem);
+                    this.Width = 400;
+                    btn_redution.Visible = false;
+                    btn_extention.Visible = true;
+                }
+                streamReader.Close();
             }
-            streamReader.Close();
+
+            fileInfo = new FileInfo("Wword.txt");
+            if(fileInfo.Exists)
+            {
+                StreamReader streamReader2 = new StreamReader("Wword.txt");
+                while (streamReader2.Peek() >= 0)
+                {
+                    string str = streamReader2.ReadLine();
+                    string[] str1 = str.Split(' ');
+                    ListViewItem listViewItem = new ListViewItem(str1);
+                    list_Wword.Items.Add(listViewItem);
+                    this.Width = 400;
+                    btn_redution.Visible = false;
+                    btn_extention.Visible = true;
+                }
+                streamReader2.Close();
+            }
+            txt_Wword_cnt.Text = list_Wword.Items.Count.ToString();
+            
 
         }
         public void randomtxt()
@@ -101,9 +124,14 @@ namespace 단어장
             {
                 txt_result.Text = "wrong";
                 txt_incornum.Text = (Convert.ToInt32(txt_incornum.Text) + 1).ToString();
-                string[] str = new string[] { txt_word.Text, answer };
-                ListViewItem listViewItem = new ListViewItem(str);
-                list_Wword.Items.Add(listViewItem);
+                if(testcheck)
+                {
+                    string[] str = new string[] { txt_word.Text, answer };
+                    ListViewItem listViewItem = new ListViewItem(str);
+                    list_Wword.Items.Add(listViewItem);
+                    txt_Wword_cnt.Text = list_Wword.Items.Count.ToString();
+                }
+                
             }
             txt_mean.Text = "";
             if(testcheck)
@@ -146,12 +174,24 @@ namespace 단어장
 
         private void btn_save_Click(object sender, EventArgs e)
         {
-            ListViewItem listViewItem = new ListViewItem(new string[] { txt_Sword.Text, txt_Smean.Text },-1);
-            list_words.Items.Add(listViewItem);
-            txt_Smean.Text = "";
-            txt_Sword.Text = "";
-            txt_Sword.Focus();
-            txt_wordcnt.Text = list_words.Items.Count.ToString();
+            if(string.IsNullOrEmpty(txt_Sword.Text))
+            {
+                MessageBox.Show("단어를 입력해주세요.", "오류", MessageBoxButtons.OK);
+            }
+            else if(string.IsNullOrEmpty(txt_Smean.Text))
+            {
+                MessageBox.Show("뜻을 입력해주세요.", "오류", MessageBoxButtons.OK);
+            }
+            else
+            {
+                ListViewItem listViewItem = new ListViewItem(new string[] { txt_Sword.Text, txt_Smean.Text }, -1);
+                list_words.Items.Add(listViewItem);
+                txt_Smean.Text = "";
+                txt_Sword.Text = "";
+                txt_Sword.Focus();
+                txt_wordcnt.Text = list_words.Items.Count.ToString();
+            }
+            
         }
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
@@ -166,6 +206,17 @@ namespace 단어장
             }
 
             streamWriter.Close();
+
+            StreamWriter streamWriter2 = new StreamWriter("Wword.txt");
+
+            for (int i = 0; i < list_Wword.Items.Count; i++)
+            {
+                string str = list_Wword.Items[i].Text + " " + list_Wword.Items[i].SubItems[1].Text;
+
+                streamWriter2.WriteLine(str);
+            }
+
+            streamWriter2.Close();
         }
 
         private void btn_listdel_Click(object sender, EventArgs e)
@@ -176,7 +227,7 @@ namespace 단어장
 
         private void btn_extention_Click(object sender, EventArgs e)
         {
-            for(int i =400;i<=850;i+=5)
+            for(int i =400;i<=850;i+=7)
             {
                 this.Width = i;
             }
@@ -187,7 +238,7 @@ namespace 단어장
 
         private void btn_redution_Click(object sender, EventArgs e)
         {
-            for(int i =650;i>=400;i-=5)
+            for(int i =850;i>=400;i-=7)
             {
                 this.Width = i;
             }
@@ -214,7 +265,6 @@ namespace 단어장
                 {
                     list.Add(i);
                 }
-                list_Wword.Clear();
                 txt_word.Text = list_Wword.Items[list[0]].Text;
                 answer = list_Wword.Items[list[0]].SubItems[1].Text;
                 list.RemoveAt(0);
@@ -227,7 +277,6 @@ namespace 단어장
                 {
                     list.Add(i);
                 }
-                list_Wword.Clear();
                 txt_word.Text = list_Wword.Items[list[0]].Text;
                 answer = list_Wword.Items[list[0]].SubItems[1].Text;
                 list.RemoveAt(0);
@@ -251,6 +300,26 @@ namespace 단어장
             }
                 
         }
-       
+
+        private void btn_start_test_Click(object sender, EventArgs e)
+        {
+            list.Clear();
+            txt_result.Text = "input answer";
+            list.Add(0);
+            randomtxt();
+            txt_wordcnt.Text = list_words.Items.Count.ToString();
+            txt_word.Text = list_words.Items[list[0]].Text;
+            answer = list_words.Items[list[0]].SubItems[1].Text;
+            list.RemoveAt(0);
+
+            testcheck = true;
+            list_Wword.Items.Clear();
+        }
+
+        private void btn_Wword_del_Click(object sender, EventArgs e)
+        {
+            list_Wword.SelectedItems[0].Remove();
+            txt_Wword_cnt.Text = list_Wword.Items.Count.ToString();
+        }
     }
 }
