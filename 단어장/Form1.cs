@@ -221,8 +221,12 @@ namespace 단어장
 
         private void btn_listdel_Click(object sender, EventArgs e)
         {
-            list_words.SelectedItems[0].Remove();
-            txt_wordcnt.Text = list_words.Items.Count.ToString();
+            if(list_words.Items.Count > 0)
+            {
+                list_words.SelectedItems[0].Remove();
+                txt_wordcnt.Text = list_words.Items.Count.ToString();
+            }
+            
         }
 
         private void btn_extention_Click(object sender, EventArgs e)
@@ -321,8 +325,12 @@ namespace 단어장
 
         private void btn_Wword_del_Click(object sender, EventArgs e)
         {
-            list_Wword.SelectedItems[0].Remove();
-            txt_Wword_cnt.Text = list_Wword.Items.Count.ToString();
+            if(list_Wword.Items.Count > 0)
+            {
+                list_Wword.SelectedItems[0].Remove();
+                txt_Wword_cnt.Text = list_Wword.Items.Count.ToString();
+            }
+            
         }
     }
 }
