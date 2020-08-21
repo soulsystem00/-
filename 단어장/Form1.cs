@@ -227,18 +227,18 @@ namespace 단어장
 
         private void btn_extention_Click(object sender, EventArgs e)
         {
-            for(int i =400;i<=850;i+=7)
+            for(int i =400;i<=900;i+=7)
             {
                 this.Width = i;
             }
-            this.Width = 850;
+            this.Width = 900;
             btn_extention.Visible = false;
             btn_redution.Visible = true;
         }
 
         private void btn_redution_Click(object sender, EventArgs e)
         {
-            for(int i =850;i>=400;i-=7)
+            for(int i =900;i>=400;i-=7)
             {
                 this.Width = i;
             }
@@ -257,7 +257,8 @@ namespace 단어장
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            txt_cornum.Text = "0";
+            txt_incornum.Text = "0";
             if (list.Count == 0)
             {
                 testcheck = false;
@@ -314,6 +315,8 @@ namespace 단어장
 
             testcheck = true;
             list_Wword.Items.Clear();
+            txt_cornum.Text = "0";
+            txt_incornum.Text = "0";
         }
 
         private void btn_Wword_del_Click(object sender, EventArgs e)

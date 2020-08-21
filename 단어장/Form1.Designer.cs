@@ -270,7 +270,7 @@
             this.list_Wword.HideSelection = false;
             this.list_Wword.Location = new System.Drawing.Point(725, 66);
             this.list_Wword.Name = "list_Wword";
-            this.list_Wword.Size = new System.Drawing.Size(205, 271);
+            this.list_Wword.Size = new System.Drawing.Size(228, 271);
             this.list_Wword.TabIndex = 20;
             this.list_Wword.UseCompatibleStateImageBehavior = false;
             this.list_Wword.View = System.Windows.Forms.View.Details;
@@ -287,9 +287,9 @@
             // 
             // btn_WwT
             // 
-            this.btn_WwT.Location = new System.Drawing.Point(724, 372);
+            this.btn_WwT.Location = new System.Drawing.Point(725, 372);
             this.btn_WwT.Name = "btn_WwT";
-            this.btn_WwT.Size = new System.Drawing.Size(206, 30);
+            this.btn_WwT.Size = new System.Drawing.Size(228, 30);
             this.btn_WwT.TabIndex = 21;
             this.btn_WwT.Text = "틀린단어 테스트 시작";
             this.btn_WwT.UseVisualStyleBackColor = true;
@@ -315,9 +315,9 @@
             // 
             // btn_mean_visible
             // 
-            this.btn_mean_visible.Location = new System.Drawing.Point(805, 343);
+            this.btn_mean_visible.Location = new System.Drawing.Point(814, 343);
             this.btn_mean_visible.Name = "btn_mean_visible";
-            this.btn_mean_visible.Size = new System.Drawing.Size(125, 30);
+            this.btn_mean_visible.Size = new System.Drawing.Size(139, 30);
             this.btn_mean_visible.TabIndex = 24;
             this.btn_mean_visible.Text = "단어 뜻 숨기기";
             this.btn_mean_visible.UseVisualStyleBackColor = true;
@@ -356,7 +356,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(942, 450);
+            this.ClientSize = new System.Drawing.Size(993, 450);
             this.Controls.Add(this.btn_Wword_del);
             this.Controls.Add(this.txt_Wword_cnt);
             this.Controls.Add(this.btn_start_test);
