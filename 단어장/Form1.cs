@@ -332,5 +332,15 @@ namespace 단어장
             }
             
         }
+
+        private void list_Wword_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_wordcnt_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

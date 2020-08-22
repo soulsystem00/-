@@ -106,9 +106,9 @@
             this.단어,
             this.뜻});
             this.list_words.HideSelection = false;
-            this.list_words.Location = new System.Drawing.Point(467, 66);
+            this.list_words.Location = new System.Drawing.Point(467, 48);
             this.list_words.Name = "list_words";
-            this.list_words.Size = new System.Drawing.Size(232, 271);
+            this.list_words.Size = new System.Drawing.Size(323, 156);
             this.list_words.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.list_words.TabIndex = 4;
             this.list_words.UseCompatibleStateImageBehavior = false;
@@ -180,9 +180,9 @@
             // 
             // btn_listdel
             // 
-            this.btn_listdel.Location = new System.Drawing.Point(624, 343);
+            this.btn_listdel.Location = new System.Drawing.Point(796, 142);
             this.btn_listdel.Name = "btn_listdel";
-            this.btn_listdel.Size = new System.Drawing.Size(75, 30);
+            this.btn_listdel.Size = new System.Drawing.Size(166, 30);
             this.btn_listdel.TabIndex = 11;
             this.btn_listdel.Text = "삭제";
             this.btn_listdel.UseVisualStyleBackColor = true;
@@ -247,20 +247,22 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(464, 347);
+            this.label6.Location = new System.Drawing.Point(464, 426);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(77, 15);
             this.label6.TabIndex = 18;
             this.label6.Text = "단어갯수 :";
+            this.label6.Visible = false;
             // 
             // txt_wordcnt
             // 
             this.txt_wordcnt.AutoSize = true;
-            this.txt_wordcnt.Location = new System.Drawing.Point(547, 347);
+            this.txt_wordcnt.Location = new System.Drawing.Point(567, 30);
             this.txt_wordcnt.Name = "txt_wordcnt";
             this.txt_wordcnt.Size = new System.Drawing.Size(15, 15);
             this.txt_wordcnt.TabIndex = 19;
             this.txt_wordcnt.Text = "0";
+            this.txt_wordcnt.Click += new System.EventHandler(this.txt_wordcnt_Click);
             // 
             // list_Wword
             // 
@@ -268,12 +270,13 @@
             this.columnHeader1,
             this.columnHeader2});
             this.list_Wword.HideSelection = false;
-            this.list_Wword.Location = new System.Drawing.Point(725, 66);
+            this.list_Wword.Location = new System.Drawing.Point(467, 245);
             this.list_Wword.Name = "list_Wword";
-            this.list_Wword.Size = new System.Drawing.Size(228, 271);
+            this.list_Wword.Size = new System.Drawing.Size(323, 163);
             this.list_Wword.TabIndex = 20;
             this.list_Wword.UseCompatibleStateImageBehavior = false;
             this.list_Wword.View = System.Windows.Forms.View.Details;
+            this.list_Wword.SelectedIndexChanged += new System.EventHandler(this.list_Wword_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
@@ -287,9 +290,9 @@
             // 
             // btn_WwT
             // 
-            this.btn_WwT.Location = new System.Drawing.Point(725, 372);
+            this.btn_WwT.Location = new System.Drawing.Point(796, 379);
             this.btn_WwT.Name = "btn_WwT";
-            this.btn_WwT.Size = new System.Drawing.Size(228, 30);
+            this.btn_WwT.Size = new System.Drawing.Size(166, 29);
             this.btn_WwT.TabIndex = 21;
             this.btn_WwT.Text = "틀린단어 테스트 시작";
             this.btn_WwT.UseVisualStyleBackColor = true;
@@ -298,16 +301,16 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(464, 48);
+            this.label7.Location = new System.Drawing.Point(464, 30);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(87, 15);
+            this.label7.Size = new System.Drawing.Size(97, 15);
             this.label7.TabIndex = 22;
-            this.label7.Text = "저장된 단어";
+            this.label7.Text = "저장된 단어 :";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(722, 48);
+            this.label8.Location = new System.Drawing.Point(464, 227);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(77, 15);
             this.label8.TabIndex = 23;
@@ -315,9 +318,9 @@
             // 
             // btn_mean_visible
             // 
-            this.btn_mean_visible.Location = new System.Drawing.Point(814, 343);
+            this.btn_mean_visible.Location = new System.Drawing.Point(796, 348);
             this.btn_mean_visible.Name = "btn_mean_visible";
-            this.btn_mean_visible.Size = new System.Drawing.Size(139, 30);
+            this.btn_mean_visible.Size = new System.Drawing.Size(166, 29);
             this.btn_mean_visible.TabIndex = 24;
             this.btn_mean_visible.Text = "단어 뜻 숨기기";
             this.btn_mean_visible.UseVisualStyleBackColor = true;
@@ -325,9 +328,9 @@
             // 
             // btn_start_test
             // 
-            this.btn_start_test.Location = new System.Drawing.Point(467, 372);
+            this.btn_start_test.Location = new System.Drawing.Point(796, 174);
             this.btn_start_test.Name = "btn_start_test";
-            this.btn_start_test.Size = new System.Drawing.Size(232, 30);
+            this.btn_start_test.Size = new System.Drawing.Size(166, 30);
             this.btn_start_test.TabIndex = 25;
             this.btn_start_test.Text = "테스트 시작";
             this.btn_start_test.UseVisualStyleBackColor = true;
@@ -336,7 +339,7 @@
             // txt_Wword_cnt
             // 
             this.txt_Wword_cnt.AutoSize = true;
-            this.txt_Wword_cnt.Location = new System.Drawing.Point(805, 48);
+            this.txt_Wword_cnt.Location = new System.Drawing.Point(547, 227);
             this.txt_Wword_cnt.Name = "txt_Wword_cnt";
             this.txt_Wword_cnt.Size = new System.Drawing.Size(45, 15);
             this.txt_Wword_cnt.TabIndex = 26;
@@ -344,9 +347,9 @@
             // 
             // btn_Wword_del
             // 
-            this.btn_Wword_del.Location = new System.Drawing.Point(724, 343);
+            this.btn_Wword_del.Location = new System.Drawing.Point(796, 317);
             this.btn_Wword_del.Name = "btn_Wword_del";
-            this.btn_Wword_del.Size = new System.Drawing.Size(75, 30);
+            this.btn_Wword_del.Size = new System.Drawing.Size(166, 29);
             this.btn_Wword_del.TabIndex = 27;
             this.btn_Wword_del.Text = "삭제";
             this.btn_Wword_del.UseVisualStyleBackColor = true;
