@@ -130,6 +130,7 @@ namespace 단어장
                     ListViewItem listViewItem = new ListViewItem(str);
                     list_Wword.Items.Add(listViewItem);
                     txt_Wword_cnt.Text = list_Wword.Items.Count.ToString();
+                    list_Wword.Items[list_Wword.Items.Count-1].EnsureVisible();
                 }
                 
             }
@@ -263,6 +264,7 @@ namespace 단어장
         {
             txt_cornum.Text = "0";
             txt_incornum.Text = "0";
+            
             if (list.Count == 0)
             {
                 testcheck = false;
@@ -273,19 +275,30 @@ namespace 단어장
                 txt_word.Text = list_Wword.Items[list[0]].Text;
                 answer = list_Wword.Items[list[0]].SubItems[1].Text;
                 list.RemoveAt(0);
+                btn_redution_Click(sender, e);
             }
-            else if(MessageBox.Show("테스트가 완료되지 않았습니다.\n틀린 단어 테스트를 시작하시겠습니까?", "틀린단어 테스트", MessageBoxButtons.YesNo).ToString() == "Yes")
+            else if((MessageBox.Show("테스트가 완료되지 않았습니다.\n틀린 단어 테스트를 시작하시겠습니까?", "틀린단어 테스트", MessageBoxButtons.YesNo).ToString() == "Yes"))
             {
-                testcheck = false;
-                list.Clear();
-                for (int i = 0; i < list_Wword.Items.Count; i++)
+                if(list_Wword.Items.Count <= 0)
                 {
-                    list.Add(i);
+                    MessageBox.Show("테스트할 단어가 없습니다.", "틀린단어 테스트", MessageBoxButtons.OK);
                 }
-                txt_word.Text = list_Wword.Items[list[0]].Text;
-                answer = list_Wword.Items[list[0]].SubItems[1].Text;
-                list.RemoveAt(0);
+                else
+                {
+                    testcheck = false;
+                    list.Clear();
+                    for (int i = 0; i < list_Wword.Items.Count; i++)
+                    {
+                        list.Add(i);
+                    }
+                    txt_word.Text = list_Wword.Items[list[0]].Text;
+                    answer = list_Wword.Items[list[0]].SubItems[1].Text;
+                    list.RemoveAt(0);
+                    btn_redution_Click(sender, e);
+                }
+
             }
+                
             
         }
 
@@ -300,7 +313,7 @@ namespace 단어장
             }   
             else
             {
-                list_Wword.Columns[1].Width = 100;
+                list_Wword.Columns[1].Width = 120;
                 btn_mean_visible.Text = "단어 뜻 숨기기";
             }
                 
@@ -321,6 +334,7 @@ namespace 단어장
             list_Wword.Items.Clear();
             txt_cornum.Text = "0";
             txt_incornum.Text = "0";
+            btn_redution_Click(sender, e);
         }
 
         private void btn_Wword_del_Click(object sender, EventArgs e)
@@ -331,16 +345,6 @@ namespace 단어장
                 txt_Wword_cnt.Text = list_Wword.Items.Count.ToString();
             }
             
-        }
-
-        private void list_Wword_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txt_wordcnt_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

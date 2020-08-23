@@ -94,7 +94,7 @@
             // 
             this.btn_submit.Location = new System.Drawing.Point(233, 99);
             this.btn_submit.Name = "btn_submit";
-            this.btn_submit.Size = new System.Drawing.Size(75, 23);
+            this.btn_submit.Size = new System.Drawing.Size(75, 25);
             this.btn_submit.TabIndex = 3;
             this.btn_submit.Text = "제출";
             this.btn_submit.UseVisualStyleBackColor = true;
@@ -117,7 +117,7 @@
             // 단어
             // 
             this.단어.Text = "단어";
-            this.단어.Width = 90;
+            this.단어.Width = 120;
             // 
             // 뜻
             // 
@@ -262,7 +262,6 @@
             this.txt_wordcnt.Size = new System.Drawing.Size(15, 15);
             this.txt_wordcnt.TabIndex = 19;
             this.txt_wordcnt.Text = "0";
-            this.txt_wordcnt.Click += new System.EventHandler(this.txt_wordcnt_Click);
             // 
             // list_Wword
             // 
@@ -276,12 +275,11 @@
             this.list_Wword.TabIndex = 20;
             this.list_Wword.UseCompatibleStateImageBehavior = false;
             this.list_Wword.View = System.Windows.Forms.View.Details;
-            this.list_Wword.SelectedIndexChanged += new System.EventHandler(this.list_Wword_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
             this.columnHeader1.Text = "단어";
-            this.columnHeader1.Width = 90;
+            this.columnHeader1.Width = 120;
             // 
             // columnHeader2
             // 
