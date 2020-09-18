@@ -222,7 +222,7 @@ namespace 단어장
 
         private void btn_listdel_Click(object sender, EventArgs e)
         {
-            if(list_words.Items.Count > 0)
+            if(list_words.Items.Count > 0 && list_words.SelectedItems.Count != 0)
             {
                 list_words.SelectedItems[0].Remove();
                 txt_wordcnt.Text = list_words.Items.Count.ToString();
@@ -339,7 +339,7 @@ namespace 단어장
 
         private void btn_Wword_del_Click(object sender, EventArgs e)
         {
-            if(list_Wword.Items.Count > 0)
+            if (list_Wword.Items.Count > 0 && list_Wword.SelectedItems.Count != 0)
             {
                 list_Wword.SelectedItems[0].Remove();
                 txt_Wword_cnt.Text = list_Wword.Items.Count.ToString();
