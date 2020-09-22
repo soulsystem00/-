@@ -48,7 +48,7 @@ namespace 단어장
                     string[] str1 = str.Split(' ');
                     ListViewItem listViewItem = new ListViewItem(str1);
                     list_words.Items.Add(listViewItem);
-                    this.Width = 400;
+                    this.Width = 420;
                     btn_redution.Visible = false;
                     btn_extention.Visible = true;
                 }
@@ -65,7 +65,7 @@ namespace 단어장
                     string[] str1 = str.Split(' ');
                     ListViewItem listViewItem = new ListViewItem(str1);
                     list_Wword.Items.Add(listViewItem);
-                    this.Width = 400;
+                    this.Width = 420;
                     btn_redution.Visible = false;
                     btn_extention.Visible = true;
                 }
@@ -95,6 +95,7 @@ namespace 단어장
                     else
                         check = true;
                 }
+
                 if(check)
                 {
                     list.Add(num);
@@ -232,7 +233,7 @@ namespace 단어장
 
         private void btn_extention_Click(object sender, EventArgs e)
         {
-            for(int i =400;i<=900;i+=7)
+            for(int i =410;i<=900;i+=7)
             {
                 this.Width = i;
             }
@@ -243,11 +244,11 @@ namespace 단어장
 
         private void btn_redution_Click(object sender, EventArgs e)
         {
-            for(int i =900;i>=400;i-=7)
+            for(int i =900;i>=410;i-=7)
             {
                 this.Width = i;
             }
-            this.Width = 400;
+            this.Width = 410;
             btn_extention.Visible = true;
             btn_redution.Visible = false;
         }
@@ -345,6 +346,11 @@ namespace 단어장
                 txt_Wword_cnt.Text = list_Wword.Items.Count.ToString();
             }
             
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
