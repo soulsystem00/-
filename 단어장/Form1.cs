@@ -109,11 +109,6 @@ namespace 단어장
 
             answer = list_words.Items[num].SubItems[1].Text;*/
         }
-        private void Form1_Load(object sender, EventArgs e)
-        {
-           
-
-        }
 
         private void btn_submit_Click(object sender, EventArgs e)
         {
@@ -131,7 +126,7 @@ namespace 단어장
             if (check)
             {
                 txt_result.Text = "correct";
-
+                 
                 txt_cornum.Text = (Convert.ToInt32(txt_cornum.Text) + 1).ToString();
             }
             else
@@ -246,7 +241,7 @@ namespace 단어장
 
         private void btn_extention_Click(object sender, EventArgs e)
         {
-            for(int i = minwidth; i<= maxwidth; i+=7)
+            for (int i = minwidth; i <= maxwidth; i += 7)
             {
                 this.Width = i;
             }
@@ -257,7 +252,7 @@ namespace 단어장
 
         private void btn_redution_Click(object sender, EventArgs e)
         {
-            for(int i =maxwidth;i>= minwidth; i-=7)
+            for (int i = maxwidth; i >= minwidth; i -= 7)
             {
                 this.Width = i;
             }
@@ -353,24 +348,21 @@ namespace 단어장
 
         private void btn_Wword_del_Click(object sender, EventArgs e)
         {
-            if (list_Wword.Items.Count > 0 && list_Wword.SelectedItems.Count != 0)
+            if (list_Wword.Items.Count
+                <= 0 || list_Wword.SelectedItems.Count == 0)
             {
-                list_Wword.SelectedItems[0].Remove();
-                txt_Wword_cnt.Text = list_Wword.Items.Count.ToString();
+                return;
             }
-            
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
+            list_Wword.SelectedItems[0]
+                      .Remove();
+            txt_Wword_cnt.Text = list_Wword.Items.Count.ToString();
         }
 
         private void btn_search_Click(object sender, EventArgs e)
         {
             string searchtxt = txt_search.Text;
-            
-            if(!string.IsNullOrEmpty(searchtxt))
+
+            if (!string.IsNullOrEmpty(searchtxt))
             {
                 int size = Convert.ToInt32(list_words.Items.Count);
                 for (int i = 0; i < size; i++)
@@ -400,6 +392,11 @@ namespace 단어장
             {
                 btn_search_Click(sender, e);
             }
+        }
+
+        private void btn_copy_Click(object sender, EventArgs e)
+        {
+            txt_search.Text = txt_word.Text;
         }
     }
 }

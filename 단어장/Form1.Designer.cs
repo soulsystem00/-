@@ -62,6 +62,7 @@
             this.btn_Wword_del = new System.Windows.Forms.Button();
             this.txt_search = new System.Windows.Forms.TextBox();
             this.btn_search = new System.Windows.Forms.Button();
+            this.btn_copy = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txt_word
@@ -94,7 +95,6 @@
             this.label2.Size = new System.Drawing.Size(39, 27);
             this.label2.TabIndex = 2;
             this.label2.Text = "뜻";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // btn_submit
             // 
@@ -208,7 +208,7 @@
             // 
             // btn_extention
             // 
-            this.btn_extention.Location = new System.Drawing.Point(309, 450);
+            this.btn_extention.Location = new System.Drawing.Point(319, 340);
             this.btn_extention.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_extention.Name = "btn_extention";
             this.btn_extention.Size = new System.Drawing.Size(66, 29);
@@ -219,7 +219,7 @@
             // 
             // btn_redution
             // 
-            this.btn_redution.Location = new System.Drawing.Point(309, 450);
+            this.btn_redution.Location = new System.Drawing.Point(319, 341);
             this.btn_redution.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_redution.Name = "btn_redution";
             this.btn_redution.Size = new System.Drawing.Size(66, 29);
@@ -389,19 +389,30 @@
             // 
             // btn_search
             // 
-            this.btn_search.Location = new System.Drawing.Point(829, 79);
+            this.btn_search.Location = new System.Drawing.Point(829, 78);
             this.btn_search.Name = "btn_search";
-            this.btn_search.Size = new System.Drawing.Size(145, 39);
+            this.btn_search.Size = new System.Drawing.Size(145, 20);
             this.btn_search.TabIndex = 29;
             this.btn_search.Text = "검색";
             this.btn_search.UseVisualStyleBackColor = true;
             this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
+            // btn_copy
+            // 
+            this.btn_copy.Location = new System.Drawing.Point(829, 100);
+            this.btn_copy.Name = "btn_copy";
+            this.btn_copy.Size = new System.Drawing.Size(145, 21);
+            this.btn_copy.TabIndex = 30;
+            this.btn_copy.Text = "단어 가져오기";
+            this.btn_copy.UseVisualStyleBackColor = true;
+            this.btn_copy.Click += new System.EventHandler(this.btn_copy_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1022, 646);
+            this.ClientSize = new System.Drawing.Size(1022, 515);
+            this.Controls.Add(this.btn_copy);
             this.Controls.Add(this.btn_search);
             this.Controls.Add(this.txt_search);
             this.Controls.Add(this.btn_Wword_del);
@@ -436,7 +447,6 @@
             this.Name = "Form1";
             this.Text = "단어맞추기";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -478,6 +488,7 @@
         private System.Windows.Forms.Button btn_Wword_del;
         private System.Windows.Forms.TextBox txt_search;
         private System.Windows.Forms.Button btn_search;
+        private System.Windows.Forms.Button btn_copy;
     }
 }
 
