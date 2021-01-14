@@ -19,7 +19,8 @@ namespace 단어장
 
         List<int> list;
         bool testcheck;
-
+        int minwidth = 500;
+        int maxwidth = 1000;
         bool wrong_word_mean_visible = false;
         public Form1()
         {
@@ -48,7 +49,7 @@ namespace 단어장
                     string[] str1 = str.Split(' ');
                     ListViewItem listViewItem = new ListViewItem(str1);
                     list_words.Items.Add(listViewItem);
-                    this.Width = 420;
+                    this.Width = minwidth;
                     btn_redution.Visible = false;
                     btn_extention.Visible = true;
                 }
@@ -65,7 +66,7 @@ namespace 단어장
                     string[] str1 = str.Split(' ');
                     ListViewItem listViewItem = new ListViewItem(str1);
                     list_Wword.Items.Add(listViewItem);
-                    this.Width = 420;
+                    this.Width = minwidth;
                     btn_redution.Visible = false;
                     btn_extention.Visible = true;
                 }
@@ -233,22 +234,22 @@ namespace 단어장
 
         private void btn_extention_Click(object sender, EventArgs e)
         {
-            for(int i =410;i<=900;i+=7)
+            for(int i = minwidth; i<= maxwidth; i+=7)
             {
                 this.Width = i;
             }
-            this.Width = 900;
+            this.Width = maxwidth;
             btn_extention.Visible = false;
             btn_redution.Visible = true;
         }
 
         private void btn_redution_Click(object sender, EventArgs e)
         {
-            for(int i =900;i>=410;i-=7)
+            for(int i =maxwidth;i>= minwidth; i-=7)
             {
                 this.Width = i;
             }
-            this.Width = 410;
+            this.Width = minwidth;
             btn_extention.Visible = true;
             btn_redution.Visible = false;
         }

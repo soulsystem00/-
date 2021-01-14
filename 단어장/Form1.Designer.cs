@@ -112,7 +112,7 @@
             this.단어,
             this.뜻});
             this.list_words.HideSelection = false;
-            this.list_words.Location = new System.Drawing.Point(409, 38);
+            this.list_words.Location = new System.Drawing.Point(534, 36);
             this.list_words.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.list_words.Name = "list_words";
             this.list_words.Size = new System.Drawing.Size(283, 126);
@@ -195,7 +195,7 @@
             // 
             // btn_listdel
             // 
-            this.btn_listdel.Location = new System.Drawing.Point(696, 114);
+            this.btn_listdel.Location = new System.Drawing.Point(821, 112);
             this.btn_listdel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_listdel.Name = "btn_listdel";
             this.btn_listdel.Size = new System.Drawing.Size(145, 24);
@@ -265,7 +265,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(406, 341);
+            this.label6.Location = new System.Drawing.Point(531, 339);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(61, 12);
             this.label6.TabIndex = 18;
@@ -275,7 +275,7 @@
             // txt_wordcnt
             // 
             this.txt_wordcnt.AutoSize = true;
-            this.txt_wordcnt.Location = new System.Drawing.Point(496, 24);
+            this.txt_wordcnt.Location = new System.Drawing.Point(621, 22);
             this.txt_wordcnt.Name = "txt_wordcnt";
             this.txt_wordcnt.Size = new System.Drawing.Size(11, 12);
             this.txt_wordcnt.TabIndex = 19;
@@ -287,7 +287,7 @@
             this.columnHeader1,
             this.columnHeader2});
             this.list_Wword.HideSelection = false;
-            this.list_Wword.Location = new System.Drawing.Point(409, 196);
+            this.list_Wword.Location = new System.Drawing.Point(534, 194);
             this.list_Wword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.list_Wword.Name = "list_Wword";
             this.list_Wword.Size = new System.Drawing.Size(283, 131);
@@ -307,7 +307,7 @@
             // 
             // btn_WwT
             // 
-            this.btn_WwT.Location = new System.Drawing.Point(696, 303);
+            this.btn_WwT.Location = new System.Drawing.Point(821, 301);
             this.btn_WwT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_WwT.Name = "btn_WwT";
             this.btn_WwT.Size = new System.Drawing.Size(145, 23);
@@ -319,7 +319,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(406, 24);
+            this.label7.Location = new System.Drawing.Point(531, 22);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(77, 12);
             this.label7.TabIndex = 22;
@@ -328,7 +328,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(406, 182);
+            this.label8.Location = new System.Drawing.Point(531, 180);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(61, 12);
             this.label8.TabIndex = 23;
@@ -336,7 +336,7 @@
             // 
             // btn_mean_visible
             // 
-            this.btn_mean_visible.Location = new System.Drawing.Point(696, 278);
+            this.btn_mean_visible.Location = new System.Drawing.Point(821, 276);
             this.btn_mean_visible.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_mean_visible.Name = "btn_mean_visible";
             this.btn_mean_visible.Size = new System.Drawing.Size(145, 23);
@@ -347,7 +347,7 @@
             // 
             // btn_start_test
             // 
-            this.btn_start_test.Location = new System.Drawing.Point(696, 139);
+            this.btn_start_test.Location = new System.Drawing.Point(821, 137);
             this.btn_start_test.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_start_test.Name = "btn_start_test";
             this.btn_start_test.Size = new System.Drawing.Size(145, 24);
@@ -359,7 +359,7 @@
             // txt_Wword_cnt
             // 
             this.txt_Wword_cnt.AutoSize = true;
-            this.txt_Wword_cnt.Location = new System.Drawing.Point(479, 182);
+            this.txt_Wword_cnt.Location = new System.Drawing.Point(604, 180);
             this.txt_Wword_cnt.Name = "txt_Wword_cnt";
             this.txt_Wword_cnt.Size = new System.Drawing.Size(38, 12);
             this.txt_Wword_cnt.TabIndex = 26;
@@ -367,7 +367,7 @@
             // 
             // btn_Wword_del
             // 
-            this.btn_Wword_del.Location = new System.Drawing.Point(696, 254);
+            this.btn_Wword_del.Location = new System.Drawing.Point(821, 252);
             this.btn_Wword_del.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Wword_del.Name = "btn_Wword_del";
             this.btn_Wword_del.Size = new System.Drawing.Size(145, 23);
