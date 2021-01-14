@@ -60,6 +60,8 @@
             this.btn_start_test = new System.Windows.Forms.Button();
             this.txt_Wword_cnt = new System.Windows.Forms.Label();
             this.btn_Wword_del = new System.Windows.Forms.Button();
+            this.txt_search = new System.Windows.Forms.TextBox();
+            this.btn_search = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txt_word
@@ -112,7 +114,7 @@
             this.단어,
             this.뜻});
             this.list_words.HideSelection = false;
-            this.list_words.Location = new System.Drawing.Point(534, 36);
+            this.list_words.Location = new System.Drawing.Point(542, 153);
             this.list_words.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.list_words.Name = "list_words";
             this.list_words.Size = new System.Drawing.Size(283, 126);
@@ -195,7 +197,7 @@
             // 
             // btn_listdel
             // 
-            this.btn_listdel.Location = new System.Drawing.Point(821, 112);
+            this.btn_listdel.Location = new System.Drawing.Point(829, 229);
             this.btn_listdel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_listdel.Name = "btn_listdel";
             this.btn_listdel.Size = new System.Drawing.Size(145, 24);
@@ -265,7 +267,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(531, 339);
+            this.label6.Location = new System.Drawing.Point(539, 456);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(61, 12);
             this.label6.TabIndex = 18;
@@ -275,7 +277,7 @@
             // txt_wordcnt
             // 
             this.txt_wordcnt.AutoSize = true;
-            this.txt_wordcnt.Location = new System.Drawing.Point(621, 22);
+            this.txt_wordcnt.Location = new System.Drawing.Point(629, 139);
             this.txt_wordcnt.Name = "txt_wordcnt";
             this.txt_wordcnt.Size = new System.Drawing.Size(11, 12);
             this.txt_wordcnt.TabIndex = 19;
@@ -287,7 +289,7 @@
             this.columnHeader1,
             this.columnHeader2});
             this.list_Wword.HideSelection = false;
-            this.list_Wword.Location = new System.Drawing.Point(534, 194);
+            this.list_Wword.Location = new System.Drawing.Point(542, 311);
             this.list_Wword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.list_Wword.Name = "list_Wword";
             this.list_Wword.Size = new System.Drawing.Size(283, 131);
@@ -307,7 +309,7 @@
             // 
             // btn_WwT
             // 
-            this.btn_WwT.Location = new System.Drawing.Point(821, 301);
+            this.btn_WwT.Location = new System.Drawing.Point(829, 418);
             this.btn_WwT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_WwT.Name = "btn_WwT";
             this.btn_WwT.Size = new System.Drawing.Size(145, 23);
@@ -319,7 +321,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(531, 22);
+            this.label7.Location = new System.Drawing.Point(539, 139);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(77, 12);
             this.label7.TabIndex = 22;
@@ -328,7 +330,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(531, 180);
+            this.label8.Location = new System.Drawing.Point(539, 297);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(61, 12);
             this.label8.TabIndex = 23;
@@ -336,7 +338,7 @@
             // 
             // btn_mean_visible
             // 
-            this.btn_mean_visible.Location = new System.Drawing.Point(821, 276);
+            this.btn_mean_visible.Location = new System.Drawing.Point(829, 393);
             this.btn_mean_visible.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_mean_visible.Name = "btn_mean_visible";
             this.btn_mean_visible.Size = new System.Drawing.Size(145, 23);
@@ -347,7 +349,7 @@
             // 
             // btn_start_test
             // 
-            this.btn_start_test.Location = new System.Drawing.Point(821, 137);
+            this.btn_start_test.Location = new System.Drawing.Point(829, 254);
             this.btn_start_test.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_start_test.Name = "btn_start_test";
             this.btn_start_test.Size = new System.Drawing.Size(145, 24);
@@ -359,7 +361,7 @@
             // txt_Wword_cnt
             // 
             this.txt_Wword_cnt.AutoSize = true;
-            this.txt_Wword_cnt.Location = new System.Drawing.Point(604, 180);
+            this.txt_Wword_cnt.Location = new System.Drawing.Point(612, 297);
             this.txt_Wword_cnt.Name = "txt_Wword_cnt";
             this.txt_Wword_cnt.Size = new System.Drawing.Size(38, 12);
             this.txt_Wword_cnt.TabIndex = 26;
@@ -367,7 +369,7 @@
             // 
             // btn_Wword_del
             // 
-            this.btn_Wword_del.Location = new System.Drawing.Point(821, 252);
+            this.btn_Wword_del.Location = new System.Drawing.Point(829, 369);
             this.btn_Wword_del.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Wword_del.Name = "btn_Wword_del";
             this.btn_Wword_del.Size = new System.Drawing.Size(145, 23);
@@ -376,11 +378,32 @@
             this.btn_Wword_del.UseVisualStyleBackColor = true;
             this.btn_Wword_del.Click += new System.EventHandler(this.btn_Wword_del_Click);
             // 
+            // txt_search
+            // 
+            this.txt_search.Font = new System.Drawing.Font("굴림", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txt_search.Location = new System.Drawing.Point(540, 79);
+            this.txt_search.Name = "txt_search";
+            this.txt_search.Size = new System.Drawing.Size(285, 39);
+            this.txt_search.TabIndex = 28;
+            this.txt_search.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_search_KeyDown);
+            // 
+            // btn_search
+            // 
+            this.btn_search.Location = new System.Drawing.Point(829, 79);
+            this.btn_search.Name = "btn_search";
+            this.btn_search.Size = new System.Drawing.Size(145, 39);
+            this.btn_search.TabIndex = 29;
+            this.btn_search.Text = "검색";
+            this.btn_search.UseVisualStyleBackColor = true;
+            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1022, 646);
+            this.Controls.Add(this.btn_search);
+            this.Controls.Add(this.txt_search);
             this.Controls.Add(this.btn_Wword_del);
             this.Controls.Add(this.txt_Wword_cnt);
             this.Controls.Add(this.btn_start_test);
@@ -453,6 +476,8 @@
         private System.Windows.Forms.Button btn_start_test;
         private System.Windows.Forms.Label txt_Wword_cnt;
         private System.Windows.Forms.Button btn_Wword_del;
+        private System.Windows.Forms.TextBox txt_search;
+        private System.Windows.Forms.Button btn_search;
     }
 }
 

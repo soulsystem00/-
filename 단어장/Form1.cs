@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Numerics;
 using System.Collections.Specialized;
+using System.Runtime.CompilerServices;
 
 namespace 단어장
 {
@@ -116,10 +117,21 @@ namespace 단어장
 
         private void btn_submit_Click(object sender, EventArgs e)
         {
-            if(answer == txt_mean.Text)
+            bool check = false;
+            var hello = answer.Split(',');
+            for(int i = 0;i<hello.Length;i++)
+            {
+                if (hello[i] == txt_mean.Text)
+                {
+
+                    check = true;
+                    break;
+                }
+            }
+            if (check)
             {
                 txt_result.Text = "correct";
-                
+
                 txt_cornum.Text = (Convert.ToInt32(txt_cornum.Text) + 1).ToString();
             }
             else
@@ -352,6 +364,42 @@ namespace 단어장
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_search_Click(object sender, EventArgs e)
+        {
+            string searchtxt = txt_search.Text;
+            
+            if(!string.IsNullOrEmpty(searchtxt))
+            {
+                int size = Convert.ToInt32(list_words.Items.Count);
+                for (int i = 0; i < size; i++)
+                {
+                    list_words.Items[i].Focused = false;
+                    list_words.Items[i].Selected = false;
+                }
+                for (int i = 0; i < size; i++)
+                {
+                    if (searchtxt == list_words.Items[i].Text)
+                    {
+                        list_words.Items[i].Focused = true;
+                        list_words.Items[i].Selected = true;
+                        list_words.Items[i].EnsureVisible();
+                        //list_words.Select();
+                        break;
+                    }
+                }
+                txt_search.SelectAll();
+            }
+
+        }
+
+        private void txt_search_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                btn_search_Click(sender, e);
+            }
         }
     }
 }
