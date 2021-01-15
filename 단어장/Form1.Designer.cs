@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txt_word = new System.Windows.Forms.Label();
             this.txt_mean = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -63,6 +64,9 @@
             this.txt_search = new System.Windows.Forms.TextBox();
             this.btn_search = new System.Windows.Forms.Button();
             this.btn_copy = new System.Windows.Forms.Button();
+            this.CB_Hardmode = new System.Windows.Forms.CheckBox();
+            this.tp_Hard_Mode_discription = new System.Windows.Forms.ToolTip(this.components);
+            this.label9 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txt_word
@@ -136,7 +140,7 @@
             // txt_result
             // 
             this.txt_result.AutoSize = true;
-            this.txt_result.Location = new System.Drawing.Point(106, 126);
+            this.txt_result.Location = new System.Drawing.Point(101, 162);
             this.txt_result.Name = "txt_result";
             this.txt_result.Size = new System.Drawing.Size(32, 12);
             this.txt_result.TabIndex = 5;
@@ -146,7 +150,7 @@
             // 
             this.txt_Sword.Font = new System.Drawing.Font("굴림", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txt_Sword.ImeMode = System.Windows.Forms.ImeMode.Alpha;
-            this.txt_Sword.Location = new System.Drawing.Point(103, 211);
+            this.txt_Sword.Location = new System.Drawing.Point(103, 244);
             this.txt_Sword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_Sword.Name = "txt_Sword";
             this.txt_Sword.Size = new System.Drawing.Size(200, 38);
@@ -156,7 +160,7 @@
             // 
             this.txt_Smean.Font = new System.Drawing.Font("굴림", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txt_Smean.ImeMode = System.Windows.Forms.ImeMode.Hangul;
-            this.txt_Smean.Location = new System.Drawing.Point(103, 254);
+            this.txt_Smean.Location = new System.Drawing.Point(103, 287);
             this.txt_Smean.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_Smean.Name = "txt_Smean";
             this.txt_Smean.Size = new System.Drawing.Size(200, 38);
@@ -167,7 +171,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("굴림", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(18, 214);
+            this.label1.Location = new System.Drawing.Point(18, 247);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(66, 27);
             this.label1.TabIndex = 8;
@@ -177,7 +181,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("굴림", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(45, 257);
+            this.label3.Location = new System.Drawing.Point(45, 290);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(39, 27);
             this.label3.TabIndex = 9;
@@ -186,7 +190,7 @@
             // btn_save
             // 
             this.btn_save.Font = new System.Drawing.Font("굴림", 20F);
-            this.btn_save.Location = new System.Drawing.Point(309, 211);
+            this.btn_save.Location = new System.Drawing.Point(309, 244);
             this.btn_save.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(76, 81);
@@ -208,7 +212,7 @@
             // 
             // btn_extention
             // 
-            this.btn_extention.Location = new System.Drawing.Point(319, 340);
+            this.btn_extention.Location = new System.Drawing.Point(319, 373);
             this.btn_extention.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_extention.Name = "btn_extention";
             this.btn_extention.Size = new System.Drawing.Size(66, 29);
@@ -219,7 +223,7 @@
             // 
             // btn_redution
             // 
-            this.btn_redution.Location = new System.Drawing.Point(319, 341);
+            this.btn_redution.Location = new System.Drawing.Point(319, 374);
             this.btn_redution.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_redution.Name = "btn_redution";
             this.btn_redution.Size = new System.Drawing.Size(66, 29);
@@ -407,11 +411,34 @@
             this.btn_copy.UseVisualStyleBackColor = true;
             this.btn_copy.Click += new System.EventHandler(this.btn_copy_Click);
             // 
+            // CB_Hardmode
+            // 
+            this.CB_Hardmode.AutoSize = true;
+            this.CB_Hardmode.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.CB_Hardmode.Location = new System.Drawing.Point(103, 135);
+            this.CB_Hardmode.Name = "CB_Hardmode";
+            this.CB_Hardmode.Size = new System.Drawing.Size(100, 16);
+            this.CB_Hardmode.TabIndex = 31;
+            this.CB_Hardmode.Text = "Hard Mode!";
+            this.CB_Hardmode.UseVisualStyleBackColor = true;
+            this.CB_Hardmode.MouseHover += new System.EventHandler(this.CB_Hardmode_MouseHover);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(101, 221);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(57, 12);
+            this.label9.TabIndex = 32;
+            this.label9.Text = "단어 등록";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1022, 515);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.CB_Hardmode);
             this.Controls.Add(this.btn_copy);
             this.Controls.Add(this.btn_search);
             this.Controls.Add(this.txt_search);
@@ -489,6 +516,9 @@
         private System.Windows.Forms.TextBox txt_search;
         private System.Windows.Forms.Button btn_search;
         private System.Windows.Forms.Button btn_copy;
+        private System.Windows.Forms.CheckBox CB_Hardmode;
+        private System.Windows.Forms.ToolTip tp_Hard_Mode_discription;
+        private System.Windows.Forms.Label label9;
     }
 }
 

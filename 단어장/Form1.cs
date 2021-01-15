@@ -112,37 +112,64 @@ namespace 단어장
 
         private void btn_submit_Click(object sender, EventArgs e)
         {
-            bool check = false;
-            var hello = answer.Split(',');
-            for(int i = 0;i<hello.Length;i++)
+            if(CB_Hardmode.Checked)
             {
-                if (hello[i] == txt_mean.Text)
+                if (answer == txt_mean.Text)
                 {
+                    txt_result.Text = "correct";
 
-                    check = true;
-                    break;
+                    txt_cornum.Text = (Convert.ToInt32(txt_cornum.Text) + 1).ToString();
                 }
-            }
-            if (check)
-            {
-                txt_result.Text = "correct";
-                 
-                txt_cornum.Text = (Convert.ToInt32(txt_cornum.Text) + 1).ToString();
+                else
+                {
+                    txt_result.Text = "wrong";
+                    txt_incornum.Text = (Convert.ToInt32(txt_incornum.Text) + 1).ToString();
+                    if (testcheck)
+                    {
+                        string[] str = new string[] { txt_word.Text, answer };
+                        ListViewItem listViewItem = new ListViewItem(str);
+                        list_Wword.Items.Add(listViewItem);
+                        txt_Wword_cnt.Text = list_Wword.Items.Count.ToString();
+                        list_Wword.Items[list_Wword.Items.Count - 1].EnsureVisible();
+                    }
+
+                }
             }
             else
             {
-                txt_result.Text = "wrong";
-                txt_incornum.Text = (Convert.ToInt32(txt_incornum.Text) + 1).ToString();
-                if(testcheck)
+                bool check = false;
+                var hello = answer.Split(',');
+                for (int i = 0; i < hello.Length; i++)
                 {
-                    string[] str = new string[] { txt_word.Text, answer };
-                    ListViewItem listViewItem = new ListViewItem(str);
-                    list_Wword.Items.Add(listViewItem);
-                    txt_Wword_cnt.Text = list_Wword.Items.Count.ToString();
-                    list_Wword.Items[list_Wword.Items.Count-1].EnsureVisible();
+                    if (hello[i] == txt_mean.Text)
+                    {
+
+                        check = true;
+                        break;
+                    }
                 }
-                
+                if (check)
+                {
+                    txt_result.Text = "correct";
+
+                    txt_cornum.Text = (Convert.ToInt32(txt_cornum.Text) + 1).ToString();
+                }
+                else
+                {
+                    txt_result.Text = "wrong";
+                    txt_incornum.Text = (Convert.ToInt32(txt_incornum.Text) + 1).ToString();
+                    if (testcheck)
+                    {
+                        string[] str = new string[] { txt_word.Text, answer };
+                        ListViewItem listViewItem = new ListViewItem(str);
+                        list_Wword.Items.Add(listViewItem);
+                        txt_Wword_cnt.Text = list_Wword.Items.Count.ToString();
+                        list_Wword.Items[list_Wword.Items.Count - 1].EnsureVisible();
+                    }
+
+                }
             }
+            
             txt_mean.Text = "";
             if(testcheck)
             {
@@ -397,6 +424,13 @@ namespace 단어장
         private void btn_copy_Click(object sender, EventArgs e)
         {
             txt_search.Text = txt_word.Text;
+        }
+
+        private void CB_Hardmode_MouseHover(object sender, EventArgs e)
+        {
+            tp_Hard_Mode_discription.ToolTipTitle = "하드모드";
+            tp_Hard_Mode_discription.IsBalloon = true;
+            tp_Hard_Mode_discription.SetToolTip(CB_Hardmode,"단어의 뜻을 등록되어 있는대로 입력해야 합니다.\n\nex)\n단어 : repair\n답 : 수리,수리하다");
         }
     }
 }
